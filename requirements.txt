@@ -1,0 +1,17 @@
+# HTTP Client (Jasmin API için)
+requests>=2.31.0
+
+# YAML Parser
+PyYAML>=6.0.1
+
+# Logging
+python-json-logger>=2.0.7
+
+# Date/Time utilities
+python-dateutil>=2.8.2
+
+# SCTP Support (for osmo-stp connection)
+pysctp>=0.7.2
+
+# SMPP Server (for Jasmin connection)
+smpplib>=2.2.1

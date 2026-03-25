@@ -1,0 +1,57 @@
+# SMPP Server Configuration (Bridge listens for Jasmin)
+smpp_server:
+  host: "<SMPP_HOST>"
+  port: "<SMPP_PORT>"
+  system_id: "<SMPP_SYSTEM_ID>"
+  password: "<SMPP_PASSWORD>"
+  system_type: ""
+  interface_version: 52
+  addr_ton: 0
+  addr_npi: 0
+  address_range: ""
+
+# Jasmin SMPP Gateway Configuration (deprecated - using SMPP server now)
+jasmin:
+  host: "<JASMIN_HOST>"
+  http_port: "<JASMIN_HTTP_PORT>"
+  smpp_port: "<JASMIN_SMPP_PORT>"
+  poll_interval: 1
+  username: "<JASMIN_USERNAME>"
+  password: "<JASMIN_PASSWORD>"
+
+# osmo-stp Configuration
+osmo_stp:
+  host: "<OSMO_STP_HOST>"
+  port: "<OSMO_STP_PORT>"
+  opc: "<OPC>"
+  dpc: "<DPC>"
+  ni: 2
+  reconnect_interval: 5
+
+# SCCP Configuration
+sccp:
+  local_ssn: 8
+  remote_ssn: 8
+  gti: 4
+  np: 1
+  nai: 4
+
+# Whitelist Sender Numbers
+allowed_senders:
+  - "<SENDER_1>"
+  - "<SENDER_2>"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "/var/log/sms-bridge/bridge.log"
+  max_bytes: 10485760
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Performance
+performance:
+  max_concurrent_messages: 10
+  message_timeout: 30
+  retry_count: 3
+  retry_delay: 5

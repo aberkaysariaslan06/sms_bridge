@@ -1,0 +1,20 @@
+[Unit]
+Description=SMS Bridge - SMPP to M3UA Gateway
+After=network.target osmo-stp.service
+Wants=osmo-stp.service
+
+[Service]
+Type=simple
+User=smsbridge
+Group=smsbridge
+WorkingDirectory=/opt/sms-bridge
+Environment="PATH=/opt/sms-bridge/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/opt/sms-bridge/venv/bin/python3 /opt/sms-bridge/sms_bridge.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sms-bridge
+
+[Install]
+WantedBy=multi-user.target
